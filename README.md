@@ -37,6 +37,13 @@ docker network connect dnm <컨테이너>
 - **OCI는 방화벽이 두 겹이다.** 이 스크립트는 OS(iptables)만 연다. 콘솔의 보안 목록(Security List)에서 80/443 인바운드는 따로 열어야 한다.
 - 비밀 값(API 키, 토큰)은 이 저장소에 두지 않는다. 서비스별 env 파일은 서버의 홈 디렉터리에 `chmod 600`으로 둔다.
 
+## 브랜치·커밋 규정
+
+- 브랜치: `<타입>/<kebab-case-요약>` — 예: `feat/doctor-script`, `fix/caddy-reload`
+- 타입: `feat` · `fix` · `docs` · `chore` · `refactor` · `test` (커밋 접두어와 동일)
+- 커밋: `<타입>: <한국어 요약>` — 예: `feat: 서버 점검 스크립트 추가`
+- `main`에는 직접 커밋하지 않고 PR로 머지한다. 머지 전에 새 VM이나 로컬 `bash -n`으로 동작을 확인한다.
+
 ## 요구 사항
 
 Ubuntu 22.04/24.04 (aarch64·x86_64 모두), sudo 권한.

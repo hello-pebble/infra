@@ -13,6 +13,7 @@ Caddy가 80/443을 맡고, 서비스는 Docker 컨테이너로 같은 네트워�
 |---|---|
 | [`host-init.sh`](host-init.sh) | Docker 설치, 80/443 방화벽(iptables), `dnm` 네트워크, Caddy 기동. 멱등이라 여러 번 실행해도 안전하다. |
 | [`add-site.sh`](add-site.sh) | 도메인 하나를 컨테이너에 연결하는 사이트 블록을 만들고 Caddy를 reload한다. |
+| [`doctor.sh`](doctor.sh) | 서버 점검(읽기 전용): NTP·디스크·Docker·방화벽·재시작 정책, 사이트별 네트워크 연결·DNS·HTTPS, env 파일 권한, 백업 cron. 신규 서버와 이전 직후에 실행한다. |
 
 ## 사용 순서
 
